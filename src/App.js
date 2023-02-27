@@ -18,10 +18,15 @@ const App = () => {
       })
     );
   };
+
   return (
     <div className="App">
-      <AramaÇubuğu />
-      <Gönderiler gonderiyiBegen={gonderiyiBegen} gonderiler={gonderiler} />
+      <AramaÇubuğu setArama={setArama} arama={arama} />
+      <Gönderiler
+        gonderiyiBegen={gonderiyiBegen}
+        gonderiler={gonderiler}
+        arama={arama}
+      />
     </div>
   );
 };

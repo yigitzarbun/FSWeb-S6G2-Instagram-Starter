@@ -10,13 +10,22 @@ import {
 import "./AramaÇubuğu.css";
 
 const AramaÇubuğu = (props) => {
+  const { arama, setArama } = props;
+  const handleSearch = (event) => {
+    setArama(event.target.value);
+  };
   return (
     <div className="search-bar-wrapper">
       <div className="social">
         <FontAwesomeIcon icon={faInstagram} />
       </div>
       <form className="search-form">
-        <input type="text" placeholder="Arama" />
+        <input
+          type="text"
+          placeholder="Arama"
+          onChange={handleSearch}
+          value={arama}
+        />
       </form>
       <div className="social-wrapper">
         <div className="social">
