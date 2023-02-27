@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const BeğenBölümü = (props) => {
-  const { gonderiyiBegen, begeniSayisi } = props;
-
+  const { gonderiyiBegen, begeniSayisi, setYorumYapAcik, yorumYapAcik } = props;
+  const handleYorumArea = () => {
+    setYorumYapAcik(!yorumYapAcik);
+  };
   return (
     <div>
       <div className="like-section" key="likes-icons-container">
@@ -13,7 +15,7 @@ const BeğenBölümü = (props) => {
           <FontAwesomeIcon icon={faHeart} onClick={gonderiyiBegen} />
         </div>
         <div className="like-section-wrapper">
-          <FontAwesomeIcon icon={faComment} />
+          <FontAwesomeIcon icon={faComment} onClick={handleYorumArea} />
         </div>
       </div>
       <p className="like-number"> {begeniSayisi} likes</p>

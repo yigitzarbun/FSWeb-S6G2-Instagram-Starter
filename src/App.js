@@ -7,7 +7,7 @@ import sahteVeri from "./sahte-veri";
 const App = () => {
   const [gonderiler, setGonderiler] = useState(sahteVeri);
   const [arama, setArama] = useState("");
-
+  const [yorumYapAcik, setYorumYapAcik] = useState(false);
   const gonderiyiBegen = (gonderiID) => {
     setGonderiler(
       gonderiler.map((item) => {
@@ -26,6 +26,9 @@ const App = () => {
         gonderiyiBegen={gonderiyiBegen}
         gonderiler={gonderiler}
         arama={arama}
+        setGonderiler={setGonderiler}
+        yorumYapAcik={yorumYapAcik}
+        setYorumYapAcik={setYorumYapAcik}
       />
     </div>
   );
